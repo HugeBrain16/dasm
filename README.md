@@ -19,3 +19,5 @@ bot = dasm.Bot()
 bot.prefix = "!+"  # u can edit the command prefix, default is '!#'
 bot.run("UR TOKEN HERE")
 ```
+
+![What](https://github.com/HugeBrain16/dasm/blob/master/assets/screenshot.png)
