@@ -1,9 +1,8 @@
 import setuptools
-from dasm import __version__ as version
 
 md = {
     "name": "dasm",
-    "version": version,
+    "version": "1.0.0",
     "author": "HugeBrain16",
     "url": "https://github.com/HugeBrain16/dasm",
     "license": "MIT",
