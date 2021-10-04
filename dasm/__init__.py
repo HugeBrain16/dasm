@@ -237,6 +237,11 @@ class Worker:
             embed.description = "runtime timeout"
             embed.add_field(name="Output", value= "```" + "\n".join([str(out) for out in data['runtime'].outs]) + "```")
             return await data['message'].reply(embed=embed)
+        except Exception as e:
+            embed = discord.Embed(title="Result", color=0xFF0000)
+            embed.description = "runtime caught an exception"
+            embed.add_field(name="Exception", value= "```" + str(e) + "```")
+            return await data['message'].reply(embed=embed)
         counter.cancel()
         cuptime.cancel()
         
