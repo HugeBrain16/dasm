@@ -255,6 +255,8 @@ class Worker:
 class Bot(discord.Client):
     group = CommandWrapper()
     prefix = "!#"
+    runtime_memsize = 256
+    runtime_timeout = 8
 
     async def on_ready(self):
         self.worker = Worker(self.loop)
@@ -269,7 +271,7 @@ class Bot(discord.Client):
         # init commands
         @self.group.command(name="exec", aliases=["run", "execute"])
         async def exec():
-            runtime = SharedRuntime(256)
+            runtime = SharedRuntime(self.runtime_timeout, memsize=self.runtime_memsize)
             await message.reply("Please send the assembly code")
             def check(msg):
                 return msg.author == message.author and msg.channel == message.channel
