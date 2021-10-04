@@ -10,7 +10,7 @@ import cmdtools
 
 from cmdtools.ext.command import CommandWrapper
 
-__version__ = "1.0.0"
+__version__ = "1.0.1"
 
 # OTHER SYNTAX
 COMMENT = re.compile(r"^#.*")
